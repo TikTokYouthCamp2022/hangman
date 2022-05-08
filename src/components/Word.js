@@ -21,7 +21,7 @@ function Word(props) {
             return char
         }
         else {
-            return ""
+            return "+"
         }
                
     }
