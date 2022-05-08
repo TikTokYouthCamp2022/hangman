@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import { Routes, Route, Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Hangman from './components/Hangman';
+import Keyboard from './components/Keyboard';
+import Word from './components/Word';
+
 
 function App() {
   return (
@@ -9,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="game" element={<Game />} />
       </Routes>
     </div>
   );
@@ -23,6 +29,7 @@ function Home() {
       </main>
       <nav>
         <Link to="/about">About</Link>
+        <Link to="/game">Game</Link>
       </nav>
     </>
   );
@@ -44,6 +51,32 @@ function About() {
     </>
   );
 }
+
+
+function Game() {
+  // temporary database of words to guess (to be upgraded later :D)
+  const words = ["spaghetti", "lasagna", "pepperoni pizza", "ravioli"]
+  
+  useEffect(() => {
+    // empty dependencies array
+    // RUNS ONLY ONCE AFTER first render
+  }, [])
+  
+  return (
+    <>
+      <main>
+        <h2>Welcome to the game!</h2>
+        <Hangman/>
+        <Word/>
+        <Keyboard/>
+      </main>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+    </>
+  );
+}
+
 
 
 export default App;

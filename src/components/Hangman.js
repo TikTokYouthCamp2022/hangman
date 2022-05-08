@@ -1,6 +1,6 @@
 // The Hangman animation component
 
-function Hangman() {
+function Hangman(props) {
     return (
       <p>This is the hangman component</p>
     );

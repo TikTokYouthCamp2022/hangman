@@ -1,9 +1,10 @@
 // The Letter Button component
 // One for each of the 26 letters in the alphabet
 
-function LetterBtn() {
+function LetterBtn(props) {
+
     return (
-      <p>This is the letter button component</p>
+      <p>{ props.letter }</p>
     );
   }
   

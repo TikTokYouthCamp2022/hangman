@@ -4,6 +4,7 @@ Hangman Front-End Team Project for TikTok Youth Camp 2022
 # Instructions for use
 * We will be hosting this website so the user can just go to the final link to try our website
 * Alternatively run `npm start` in the folder to run the project locally
+    * See the section on "Getting Started with Create React App" below for more info
 
 
 # Dev Notes
@@ -16,6 +17,15 @@ Packages installed
     * `npm i --save @fortawesome/fontawesome-svg-core`
     * `npm install --save @fortawesome/free-solid-svg-icons`
     * `npm install --save @fortawesome/react-fontawesome`
+* React Bootstrap
+    * `npm install react-bootstrap bootstrap`
+* React Redux
+    * `npm install react-redux`
+
+
+Packages to consider
+* React Transition Group
+    * `npm install react-transition-group --save`
 
 # Potential add ons
 * Animations on button click and hover
@@ -25,7 +35,6 @@ Packages installed
 # Other important things to note 
 * Need to do up the project documents as part of the submission
 * need to create the demo video as well
-
 
 
 <hr>
