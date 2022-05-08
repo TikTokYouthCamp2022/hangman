@@ -35,6 +35,7 @@ function Home() {
   );
 }
 
+// TODO: [optional] fill in our about section i guess haha 
 function About() {
   return (
     <>
@@ -60,6 +61,8 @@ function Game() {
   const [word, setWord] = useState("")
   const [selectedLetters, setSelectedLetters] = useState(new Array(26).fill(0)) // letters that have been selected
   const [gameState, setGamestate] =  useState("inactive") // [inactive, playing, solved, unsolved]
+  // TODO: implement lives left (ie how many letters wrongly selected)
+
   const letters = useMemo(() => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]);
   
   // useEffect(() => {
@@ -73,6 +76,12 @@ function Game() {
   function resetGame () {
     console.log("Resetting game")
   }
+
+  // TODO: function to deduce letters not listed in the word string
+  function computeWrongLetters () {
+
+  }
+
 
   const letterSelectCallback = useCallback((letterSelected) => {
     let letterIndex = letters.indexOf(letterSelected);
@@ -93,6 +102,7 @@ function Game() {
     setWord(randomWord)
   }
 
+  // TODO: update this button to either hide itself or change functionality based on gamestate
   function startGame () {
     selectRandomWord();
     setGamestate("playing");
@@ -109,6 +119,10 @@ function Game() {
   return (
     <>
       <main>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+        <hr/>
         <h2>Welcome to the game!</h2>
         <p>The hidden word is: {word}</p>
         <Hangman/>
@@ -122,12 +136,11 @@ function Game() {
           buttonClickCallback={letterSelectCallback} 
           selectedLetters={selectedLetters}
         />
+        <hr/>
         <button onClick={startGame}>Start Game</button>
         <button onClick={logVars}>Log Vars</button>
       </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
+      
     </>
   );
 }
