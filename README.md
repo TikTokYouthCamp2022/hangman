@@ -8,7 +8,8 @@ Hangman Front-End Team Project for TikTok Youth Camp 2022
 
 
 # Dev Notes
-Packages installed
+## Packages
+### Packages installed
 * React Router
     * `npm install react-router-dom@6`
 * React Spring
@@ -19,23 +20,25 @@ Packages installed
     * `npm install --save @fortawesome/react-fontawesome`
 * React Bootstrap
     * `npm install react-bootstrap bootstrap`
-* React Redux
-    * `npm install react-redux`
-
-
-Packages to consider
+* Redux Toolkit
+    * `npm install @reduxjs/toolkit`
+    
+### Packages to consider
 * React Transition Group
     * `npm install react-transition-group --save`
 
-# Potential add ons
+## Potential add ons
 * Animations on button click and hover
 * Animations on the Hangman image
 * Guess the word (ie fill in the whole word)
 
-# Other important things to note 
+## Other important things to note 
 * Need to do up the project documents as part of the submission
 * need to create the demo video as well
 
+## Misc notes
+* may or may not use react-redux (depending on implementation)
+* To decide on the css styling standard (avoid inline)
 
 <hr>
 

@@ -2,8 +2,12 @@
 // It will be filled in if the user has guessed the correct letter
 
 function LetterTile(props) {
+
+    // check conditional rendering if the props.letterDisplay is blank or not
     return (
-      <p>This is the lettertile component</p>
+      <>
+      <p>{props.letterDisplay != " " ? props.letterDisplay : "_"}</p>
+      </>
     );
   }
   
