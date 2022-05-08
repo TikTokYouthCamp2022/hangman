@@ -17,6 +17,17 @@ Packages installed
     * `npm install --save @fortawesome/free-solid-svg-icons`
     * `npm install --save @fortawesome/react-fontawesome`
 
+# Potential add ons
+* Animations on button click and hover
+* Animations on the Hangman image
+* Guess the word (ie fill in the whole word)
+
+# Other important things to note 
+* Need to do up the project documents as part of the submission
+* need to create the demo video as well
+
+
+
 <hr>
 
 # Getting Started with Create React App (Default README content from new react app)
