@@ -9,8 +9,7 @@ function Keyboard(props) {
 
     // the props will have the word to display
     // as well as the letters that have been guessed (so it knows which to show)
-    
-    // console.log(props.selectedLetters)
+  
 
     // callback is of type function
     const callback = useCallback((letter) => {
