@@ -5,6 +5,7 @@ import './App.css';
 import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
+import { update } from 'react-spring';
 
 
 function App() {
@@ -66,52 +67,74 @@ function Game() {
     gameStatus: "inactive", // [inactive, playing, solved, unsolved]
   })
 
-
   const letters = useMemo(() => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]);
 
 
-  // TODO: function to reset the game
-  function resetGame () {
-    console.log("Resetting game")
-    setGameState({
-      word: "",
-      livesLeft: 10,
-      selectedLetters: new Array(26).fill(0), // letters that have been selected
-      lettersRequired: new Array(26).fill(0), 
-      gameStatus: "inactive", // [inactive, playing, solved, unsolved]
-    })
-    
-  }
+  // function to check if all the letters of the required word are selected
+  function checkWinCondition (selectedLettersArr, requiredLettersArr) {
+    let lettersMatch  = true
 
-  // TODO: function to deduce letters not listed in the word string
-  function computeWrongLetters () {
-
-  }
-
-  // TODO: implement lives left (ie how many letters wrongly selected)
-  // TODO: function to check if all the letters of the required word are selected
-  function checkWinCondition () {
     // compare selectedLetters with Letters required
+    for (let i = 0; i < 26; i++){
+      console.log(requiredLettersArr[i], selectedLettersArr[i] )
+      if (requiredLettersArr[i] === 1 && selectedLettersArr[i] !== 1) {
+        return false
+      }
+    }
+
+    console.log(selectedLettersArr)
+    console.log(requiredLettersArr)
+    console.log(lettersMatch)
+
+    return lettersMatch
   }
 
-
+  
   const letterSelectCallback = useCallback((letterSelected) => {
+  if (gameState.gameStatus == "playing") {  
     let letterIndex = letters.indexOf(letterSelected);
     console.log("letterSelectCallback:", letterIndex)
+
+    let updatedSelectedLetters = [
+      ...gameState.selectedLetters.slice(0, letterIndex),
+      1,
+      ...gameState.selectedLetters.slice(letterIndex + 1),
+    ]
+
+    let updatedGameStatus = gameState.gameStatus
+    let updatedLives = gameState.livesLeft
+
+    // deduce letters not listed in the word string
+    if (gameState.lettersRequired[letterIndex] == 0 && 
+      gameState.selectedLetters[letterIndex] == 0) {
+        console.log("wrong letter")
+        updatedLives--
+
+        if (updatedLives == 0) {
+          // TODO: Game over
+          alert("Game over")
+          gameState.gameStatus = "unsolved"
+        }
+    }
+    else if (checkWinCondition(updatedSelectedLetters, gameState.lettersRequired)){
+      updatedGameStatus = "solved"
+      alert("You win!")
+    }
+
     setGameState(previousValues => ({
       ...previousValues, 
-      selectedLetters: [
-        ...gameState.selectedLetters.slice(0, letterIndex),
-        1,
-        ...gameState.selectedLetters.slice(letterIndex + 1),
-      ]
+      selectedLetters: updatedSelectedLetters,
+      gameStatus: updatedGameStatus,
+      livesLeft: updatedLives
     }))
-  }, [letters, gameState.selectedLetters]);
+  }
+  }, [letters, gameState]);
   
+
+  // function to select a new random word
   function selectRandomWord () {
     let randomWord = words[Math.floor(Math.random() * words.length)];
     // TODO: check use of state hook in function
-    
 
     let lettersRequiredArr = new Array(26).fill(0)
     
@@ -126,13 +149,15 @@ function Game() {
     // console.log(lettersRequiredArr)
 
     setGameState(previousValues => ({
-      ...previousValues, 
+      livesLeft: 10,
+      selectedLetters: new Array(26).fill(0),
       word: randomWord,
       gameStatus: "playing", 
       lettersRequired: lettersRequiredArr, 
     }))
     
   }
+  
 
   // TODO: update this button to either hide itself or change functionality based on gamestate
   function startGame () {
@@ -154,6 +179,8 @@ function Game() {
         <hr/>
         <h2>Welcome to the game!</h2>
         <p>The hidden word is: {gameState.word}</p>
+        <p>Lives Left: {gameState.livesLeft}</p>
+        <p>Game Status: {gameState.gameStatus}</p>
         <Hangman/>
         <Word 
           word={gameState.word} 
@@ -165,9 +192,10 @@ function Game() {
           letters={letters}
           buttonClickCallback={letterSelectCallback} 
           selectedLetters={gameState.selectedLetters}
+          gameStatus={gameState.gameStatus}
         />
         <hr/>
-        <button onClick={startGame}>Start Game</button>
+        <button onClick={startGame}>New Game</button>
         <button onClick={logVars}>Log Vars</button>
       </main>
       
