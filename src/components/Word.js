@@ -30,8 +30,11 @@ function Word(props) {
         <>
         <p>This is where we put the word to guess</p>
         <div>
-            {Array.from(props.word).map((char) => 
-                <LetterTile letterDisplay={letterDisplay(char)} />
+            {Array.from(props.word).map((char, ind) => 
+                <LetterTile 
+                    key={ind + char}
+                    letterDisplay={letterDisplay(char)} 
+                />
             )}
         </div>
         </>

@@ -5,7 +5,6 @@ import './App.css';
 import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
-import { update } from 'react-spring';
 
 
 function App() {
@@ -76,15 +75,15 @@ function Game() {
 
     // compare selectedLetters with Letters required
     for (let i = 0; i < 26; i++){
-      console.log(requiredLettersArr[i], selectedLettersArr[i] )
+      // console.log(requiredLettersArr[i], selectedLettersArr[i] )
       if (requiredLettersArr[i] === 1 && selectedLettersArr[i] !== 1) {
         return false
       }
     }
 
-    console.log(selectedLettersArr)
-    console.log(requiredLettersArr)
-    console.log(lettersMatch)
+    // console.log(selectedLettersArr)
+    // console.log(requiredLettersArr)
+    // console.log(lettersMatch)
 
     return lettersMatch
   }

@@ -26,9 +26,10 @@ function Keyboard(props) {
         <div>
             {props.letters.map((char, ind) => 
               <LetterBtn 
+                key={char + ind}
                 parentCallback={callback} 
-                  letter={char} 
-                  btnInactive={props.selectedLetters[ind]}
+                letter={char} 
+                btnInactive={props.selectedLetters[ind]}
               />
             )}
         </div>
