@@ -58,23 +58,29 @@ function Game() {
   // temporary database of words to guess (to be upgraded later :D)
   const words = ["SPAGHETTI", "LASAGNA", "RAVIOLI", "PEPPERONI PIZZA"] 
 
-  const [word, setWord] = useState("")
-  const [selectedLetters, setSelectedLetters] = useState(new Array(26).fill(0)) // letters that have been selected
-  const [gameState, setGamestate] =  useState("inactive") // [inactive, playing, solved, unsolved]
-  // TODO: implement lives left (ie how many letters wrongly selected)
+  const [gameState, setGameState] = useState({
+    word: "",
+    livesLeft: 10, // 10 lives, one for each stroke of the hangman
+    selectedLetters: new Array(26).fill(0), // letters that have been selected
+    lettersRequired: new Array(26).fill(0), 
+    gameStatus: "inactive", // [inactive, playing, solved, unsolved]
+  })
+
 
   const letters = useMemo(() => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]);
-  
-  // useEffect(() => {
-  //   // empty dependencies array
-  //   // RUNS ONLY ONCE AFTER first render
-  //   // Perhaps put code for word rnd here
 
-  // }, [])
 
   // TODO: function to reset the game
   function resetGame () {
     console.log("Resetting game")
+    setGameState({
+      word: "",
+      livesLeft: 10,
+      selectedLetters: new Array(26).fill(0), // letters that have been selected
+      lettersRequired: new Array(26).fill(0), 
+      gameStatus: "inactive", // [inactive, playing, solved, unsolved]
+    })
+    
   }
 
   // TODO: function to deduce letters not listed in the word string
@@ -82,37 +88,60 @@ function Game() {
 
   }
 
+  // TODO: implement lives left (ie how many letters wrongly selected)
+  // TODO: function to check if all the letters of the required word are selected
+  function checkWinCondition () {
+    // compare selectedLetters with Letters required
+  }
+
 
   const letterSelectCallback = useCallback((letterSelected) => {
     let letterIndex = letters.indexOf(letterSelected);
-    console.log("letterSelectCallback")
-    console.log(letterIndex)
-    setSelectedLetters(existingItems => {
-      return [
-        ...existingItems.slice(0, letterIndex),
+    console.log("letterSelectCallback:", letterIndex)
+    setGameState(previousValues => ({
+      ...previousValues, 
+      selectedLetters: [
+        ...gameState.selectedLetters.slice(0, letterIndex),
         1,
-        ...existingItems.slice(letterIndex + 1),
+        ...gameState.selectedLetters.slice(letterIndex + 1),
       ]
-    })
-  }, [letters]);
+    }))
+  }, [letters, gameState.selectedLetters]);
   
   function selectRandomWord () {
     let randomWord = words[Math.floor(Math.random() * words.length)];
     // TODO: check use of state hook in function
-    setWord(randomWord)
+    
+
+    let lettersRequiredArr = new Array(26).fill(0)
+    
+    for (var i = 0; i <randomWord.length; i++) {
+      let letterIndex = letters.indexOf(randomWord.charAt(i));
+      if (letterIndex !== -1) {
+        lettersRequiredArr[letterIndex] = 1
+      }
+    }
+
+    // console.log("lettersRequiredArr")
+    // console.log(lettersRequiredArr)
+
+    setGameState(previousValues => ({
+      ...previousValues, 
+      word: randomWord,
+      gameStatus: "playing", 
+      lettersRequired: lettersRequiredArr, 
+    }))
+    
   }
 
   // TODO: update this button to either hide itself or change functionality based on gamestate
   function startGame () {
     selectRandomWord();
-    setGamestate("playing");
   }
 
   // logging function to be removed later (seems to work already)
   function logVars () {
     console.log("Logging Vars:")
-    console.log(word);
-    console.log(selectedLetters)
     console.log(gameState)
   }
   
@@ -124,17 +153,18 @@ function Game() {
       </nav>
         <hr/>
         <h2>Welcome to the game!</h2>
-        <p>The hidden word is: {word}</p>
+        <p>The hidden word is: {gameState.word}</p>
         <Hangman/>
         <Word 
-          word={word} 
-          selectedLetters={selectedLetters}
+          word={gameState.word} 
+          selectedLetters={gameState.selectedLetters}
           letters={letters}
+          lettersRequired={gameState.lettersRequired}
         />
         <Keyboard 
           letters={letters}
           buttonClickCallback={letterSelectCallback} 
-          selectedLetters={selectedLetters}
+          selectedLetters={gameState.selectedLetters}
         />
         <hr/>
         <button onClick={startGame}>Start Game</button>

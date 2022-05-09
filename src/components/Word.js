@@ -8,12 +8,13 @@ function Word(props) {
     // the props will have the word to display
     // as well as the letters that have been guessed (so it knows which to show)
 
-    console.log(props.word)
-    console.log(Array.from(props.word))
-    console.log(props.selectedLetters)
+    // console.log(props.word)
+    // console.log(Array.from(props.word))
+    // console.log(props.selectedLetters)
+    // console.log(props.lettersRequired)
     
     function letterDisplay (char) {
-        console.log(props.letters.indexOf(char) + 1)
+        // console.log(props.letters.indexOf(char))
         if (char === " ") {
             return char
         }

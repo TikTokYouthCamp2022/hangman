@@ -9,6 +9,8 @@ function LetterBtn(props) {
     function letterSelected () {
       // console.log(props.letter)
       props.parentCallback(props.letter)
+
+      // TODO: Deactivate button on click
     }
   
     return (
