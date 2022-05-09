@@ -22,7 +22,7 @@ function Keyboard(props) {
     return (
       <>
         <p>This is where we put the keyboard</p>
-        <p>Letter pressed: { letterSelected } </p>
+        <p>Letter pressed: {props.gameStatus == "playing" ? letterSelected : "_" } </p>
         <div>
             {props.letters.map((char, ind) => 
               <LetterBtn 
