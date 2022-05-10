@@ -1,3 +1,4 @@
+/* DEFAULT STYLING */
 .App {
   text-align: center;
 }
@@ -35,4 +36,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* GAME STATS STYLE */
+.game-stats-section {
+  border: 2px solid #6a5acd;
+  background-color: #61dafb;
+  width: 60%;
+  transform: translate(30%, 0);
+}
+
+.hangman-section {
+  border: 2px solid #6a5acd;
+  background-color: #61dafb;
+  width: 60%;
+  transform: translate(30%, 0);
+}
+
+.word-section {
+  border: 2px solid #6a5acd;
+  background-color: #61dafb;
+  width: 60%;
+  transform: translate(30%, 0);
+}
+
+.selection-display-section {
+  border: 2px solid #6a5acd;
+  background-color: #61dafb;
+  width: 60%;
+  transform: translate(30%, 0);
+}
+
+.keyboard-section {
+  border: 2px solid #6a5acd;
+  background-color: #61dafb;
+  width: 60%;
+  transform: translate(30%, 0);
 }

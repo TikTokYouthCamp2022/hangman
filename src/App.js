@@ -178,30 +178,42 @@ function Game() {
       </nav>
         <hr/>
         <h2>Welcome to the game!</h2>
-        <p>The hidden word is: {gameState.word}</p>
-        <p>Lives Left: {gameState.livesLeft}</p>
-        <p>Game Status: {gameState.gameStatus}</p>
-        <Hangman/>
-        <Word 
-          word={gameState.word} 
-          selectedLetters={gameState.selectedLetters}
-          letters={letters}
-          lettersRequired={gameState.lettersRequired}
-        />
-        <SelectionDisplay
-          selectedLetters={gameState.selectedLetters}
-          lettersRequired={gameState.lettersRequired}
-          letters={letters}
-        />
-        <Keyboard 
-          letters={letters}
-          buttonClickCallback={letterSelectCallback} 
-          selectedLetters={gameState.selectedLetters}
-          gameStatus={gameState.gameStatus}
-        />
+        <div className='game-stats-section'>
+          <p className='hidden-word'>The hidden word is: {gameState.word}</p>
+          <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
+          <p className='game-status'>Game Status: {gameState.gameStatus}</p>
+        </div>
+        
+        <div className="hangman-section">
+          <Hangman/>
+        </div>
+        <div className="word-section">
+          <Word 
+            word={gameState.word} 
+            selectedLetters={gameState.selectedLetters}
+            letters={letters}
+            lettersRequired={gameState.lettersRequired}
+          />
+        </div>
+        <div className="selection-display-section">
+          <SelectionDisplay
+            selectedLetters={gameState.selectedLetters}
+            lettersRequired={gameState.lettersRequired}
+            letters={letters}
+          />
+        </div>
+        <div className="keyboard-section">
+          <Keyboard 
+            letters={letters}
+            buttonClickCallback={letterSelectCallback} 
+            selectedLetters={gameState.selectedLetters}
+            gameStatus={gameState.gameStatus}
+          />
+        </div>
+
         <hr/>
-        <button onClick={startGame}>New Game</button>
-        <button onClick={logVars}>Log Vars</button>
+        <button className='start-game-btn' onClick={startGame}>New Game</button>
+        <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
       </main>
       
     </>
