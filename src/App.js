@@ -5,6 +5,7 @@ import './App.css';
 import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
+import SelectionDisplay from './components/SelectionDisplay';
 
 
 function App() {
@@ -186,6 +187,11 @@ function Game() {
           selectedLetters={gameState.selectedLetters}
           letters={letters}
           lettersRequired={gameState.lettersRequired}
+        />
+        <SelectionDisplay
+          selectedLetters={gameState.selectedLetters}
+          lettersRequired={gameState.lettersRequired}
+          letters={letters}
         />
         <Keyboard 
           letters={letters}
