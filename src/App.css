@@ -37,6 +37,10 @@
     transform: rotate(360deg);
   }
 }
+.avatar-section {
+  border: 2px solid #6a5acd;
+  margin-bottom: 1%;
+}
 
 /* GAME STATS STYLE */
 .game-stats-section {

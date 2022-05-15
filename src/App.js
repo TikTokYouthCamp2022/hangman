@@ -6,6 +6,7 @@ import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
 import SelectionDisplay from './components/SelectionDisplay';
+import Avatar from 'react-avatar';
 
 
 function App() {
@@ -178,6 +179,18 @@ function Game() {
       </nav>
         <hr/>
         <h2>Welcome to the game!</h2>
+        {/* <Avatar alt="Player Avatar" src=" /vecteezy_man-avatar-vector-icon_6487917.svg" /> */}
+        <Avatar className='avatar-section'
+          // style={{ border: "2px solid black", margin: 10 }}
+          alt="Avatar"
+          src="https://www.svgrepo.com/show/75578/avatar.svg"
+        />
+        {/* <Avatar
+        style={{ border: "2px solid gray", margin: 10 }}
+        alt="GeeksforGeeks Pic 1"
+        src=
+"https://write.geeksforgeeks.org/static/media/Group%20210.08204759.svg"
+      /> */}
         <div className='game-stats-section'>
           <p className='hidden-word'>The hidden word is: {gameState.word}</p>
           <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
