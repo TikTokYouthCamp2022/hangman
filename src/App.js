@@ -185,12 +185,6 @@ function Game() {
           alt="Avatar"
           src="https://www.svgrepo.com/show/75578/avatar.svg"
         />
-        {/* <Avatar
-        style={{ border: "2px solid gray", margin: 10 }}
-        alt="GeeksforGeeks Pic 1"
-        src=
-"https://write.geeksforgeeks.org/static/media/Group%20210.08204759.svg"
-      /> */}
         <div className='game-stats-section'>
           <p className='hidden-word'>The hidden word is: {gameState.word}</p>
           <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
