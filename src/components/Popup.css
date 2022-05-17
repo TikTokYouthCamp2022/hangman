@@ -20,6 +20,23 @@
   
   .popup-inner .close-btn {
     position: absolute;
-    top: 20px;
+    top: 0px;
     right: 20px;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 20px 0;
+    padding: 10px 15px;
+    color: white;
+    background-color: #2ba4c2;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+  }
+
+  .popup-inner .close-btn:hover {
+    background-color: #105a87;
+    transition: background-color 0.5s;
   }
