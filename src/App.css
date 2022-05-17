@@ -100,9 +100,14 @@
   transform: translateY(4px);
 }
 
-/* FONTAWESOME ICON*/
+/* FONTAWESOME ICONs*/
 
 /* GAME OVER */
 .fa-heart-crack {
   color: #ff1c1c;
+}
+
+/* WIN */
+.fa-trophy {
+  color: #f7a202;
 }

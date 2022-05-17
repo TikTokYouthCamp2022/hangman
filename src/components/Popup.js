@@ -1,7 +1,7 @@
 import React from 'react';
-import './GameOver.css';
+import './Popup.css';
 
-function GameOver(props) {
+function Popup(props) {
     return (props.trigger) ? (
         <div className="popup">
             <div className="popup-inner">
@@ -12,4 +12,4 @@ function GameOver(props) {
     ) : "";
 }
 
-export default GameOver;
+export default Popup;
