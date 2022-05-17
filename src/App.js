@@ -113,7 +113,6 @@ function Game() {
         updatedLives--
 
         if (updatedLives == 0) {
-          // TODO: Game over
           setGameOverPopup(true);
           gameState.gameStatus = "unsolved"
         }
@@ -217,7 +216,7 @@ function Game() {
         <hr/>
         <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
-        <GameOver trigger={gameOverPopup} setTrigger = {setGameOverPopup}>
+        <GameOver trigger={gameOverPopup} setTrigger={setGameOverPopup}>
           <h1>Game Over <i class="fas fa-heart-crack"></i></h1>
         </GameOver>
       </main>
