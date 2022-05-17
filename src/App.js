@@ -172,6 +172,7 @@ function Game() {
   
   return (
     <>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" crossorigin="anonymous"></link>
       <main>
       <nav>
         <Link to="/">Home</Link>
@@ -212,7 +213,7 @@ function Game() {
         </div>
 
         <hr/>
-        <button className='start-game-btn' onClick={startGame}>New Game</button>
+        <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
       </main>
       
