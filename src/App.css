@@ -73,3 +73,29 @@
   width: 60%;
   transform: translate(30%, 0);
 }
+
+/* BUTTONS */
+.start-game-btn {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 5px 15px;
+  color: white;
+  background-color: #2ba4c2;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.start-game-btn:hover {
+  background-color: #105a87;
+  transition: background-color 0.5s;
+}
+
+.start-game-btn:active {
+  background-color: #105a87;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
