@@ -5,6 +5,7 @@ import './App.css';
 import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
+import GameOver from './components/GameOver';
 import SelectionDisplay from './components/SelectionDisplay';
 
 
@@ -69,6 +70,7 @@ function Game() {
 
   const letters = useMemo(() => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]);
 
+  const [gameOverPopup, setGameOverPopup] = useState(false);
 
   // function to check if all the letters of the required word are selected
   function checkWinCondition (selectedLettersArr, requiredLettersArr) {
@@ -112,7 +114,7 @@ function Game() {
 
         if (updatedLives == 0) {
           // TODO: Game over
-          alert("Game over")
+          setGameOverPopup(true);
           gameState.gameStatus = "unsolved"
         }
     }
@@ -215,6 +217,9 @@ function Game() {
         <hr/>
         <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
+        <GameOver trigger={gameOverPopup} setTrigger = {setGameOverPopup}>
+          <h1>Game Over <i class="fas fa-heart-crack"></i></h1>
+        </GameOver>
       </main>
       
     </>
