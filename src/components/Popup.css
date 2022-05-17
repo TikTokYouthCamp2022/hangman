@@ -20,12 +20,12 @@
   
   .popup-inner .close-btn {
     position: absolute;
-    top: 0px;
+    top: 5px;
     right: 20px;
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 10px 15px;
     color: white;
     background-color: #2ba4c2;
