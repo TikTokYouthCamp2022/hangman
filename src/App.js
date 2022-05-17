@@ -217,7 +217,7 @@ function Game() {
         <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
         <GameOver trigger={gameOverPopup} setTrigger={setGameOverPopup}>
-          <h1>Game Over <i class="fas fa-heart-crack"></i></h1>
+          <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
         </GameOver>
       </main>
       
