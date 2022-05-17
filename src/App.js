@@ -25,7 +25,7 @@ function Home() {
   return (
     <>
       <main>
-        <h2>Welcome to the homepage!</h2>
+        <h2>Home</h2>
         <p>You can do this, I believe in you.</p>
       </main>
       <nav>
@@ -43,12 +43,12 @@ function About() {
       <main>
         <h2>Who are we?</h2>
         <p>
-          That feels like an existential question, don't you
-          think?
+          We are a team of developers from the Tik Tok Youth Camp 2022 that aims to 
+          build a <Link to="/game"> hangman game</Link> using web technology covered during the camp.
         </p>
       </main>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">Return to Home</Link>
       </nav>
     </>
   );
