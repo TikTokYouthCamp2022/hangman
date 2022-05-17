@@ -40,3 +40,9 @@
     background-color: #105a87;
     transition: background-color 0.5s;
   }
+
+  .popup-inner .close-btn:active {
+    background-color: #105a87;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
