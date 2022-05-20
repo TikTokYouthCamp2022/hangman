@@ -5,6 +5,7 @@ import './App.css';
 import Hangman from './components/Hangman';
 import Keyboard from './components/Keyboard';
 import Word from './components/Word';
+import Popup from './components/Popup';
 import SelectionDisplay from './components/SelectionDisplay';
 import Avatar from 'react-avatar';
 
@@ -26,7 +27,7 @@ function Home() {
   return (
     <>
       <main>
-        <h2>Welcome to the homepage!</h2>
+        <h2>Home</h2>
         <p>You can do this, I believe in you.</p>
       </main>
       <nav>
@@ -44,12 +45,12 @@ function About() {
       <main>
         <h2>Who are we?</h2>
         <p>
-          That feels like an existential question, don't you
-          think?
+          We are a team of developers from the Tik Tok Youth Camp 2022 that aims to 
+          build a <Link to="/game"> hangman game</Link> using web technology covered during the camp.
         </p>
       </main>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">Return to Home</Link>
       </nav>
     </>
   );
@@ -70,6 +71,8 @@ function Game() {
 
   const letters = useMemo(() => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]);
 
+  const [gameOverPopup, setGameOverPopup] = useState(false);
+  const [winPopup, setWinPopup] = useState(false);
 
   // function to check if all the letters of the required word are selected
   function checkWinCondition (selectedLettersArr, requiredLettersArr) {
@@ -112,14 +115,13 @@ function Game() {
         updatedLives--
 
         if (updatedLives == 0) {
-          // TODO: Game over
-          alert("Game over")
+          setGameOverPopup(true);
           gameState.gameStatus = "unsolved"
         }
     }
     else if (checkWinCondition(updatedSelectedLetters, gameState.lettersRequired)){
       updatedGameStatus = "solved"
-      alert("You win!")
+      setWinPopup(true);
     }
 
     setGameState(previousValues => ({
@@ -173,6 +175,7 @@ function Game() {
   
   return (
     <>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" crossorigin="anonymous"></link>
       <main>
       <nav>
         <Link to="/">Home</Link>
@@ -219,8 +222,16 @@ function Game() {
         </div>
 
         <hr/>
-        <button className='start-game-btn' onClick={startGame}>New Game</button>
+        <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
+        <Popup trigger={gameOverPopup} setTrigger={setGameOverPopup}>
+          <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
+        </Popup>
+
+        <Popup trigger={winPopup} setTrigger={setWinPopup}>
+          <h1>You Win! <i class="fa-solid fa-trophy fa-bounce fa-2x"></i></h1>
+        </Popup>
+
       </main>
       
     </>
