@@ -16,13 +16,13 @@ function Word(props) {
     function letterDisplay (char) {
         // console.log(props.letters.indexOf(char))
         if (char === " ") {
-            return char
+            return "-"
         }
         else if (props.selectedLetters[props.letters.indexOf(char)] == 1) {
             return char
         }
         else {
-            return "+"
+            return ""
         }
                
     }

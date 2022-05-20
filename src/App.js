@@ -182,9 +182,7 @@ function Game() {
       </nav>
         <hr/>
         <h2>Welcome to the game!</h2>
-        {/* <Avatar alt="Player Avatar" src=" /vecteezy_man-avatar-vector-icon_6487917.svg" /> */}
         <Avatar className='avatar-section'
-          // style={{ border: "2px solid black", margin: 10 }}
           alt="Avatar"
           src="https://www.svgrepo.com/show/75578/avatar.svg"
         />
@@ -202,7 +200,7 @@ function Game() {
             word={gameState.word} 
             selectedLetters={gameState.selectedLetters}
             letters={letters}
-            lettersRequired={gameState.lettersRequired}
+            lettersRequired={gameState.lettersRequired}             
           />
         </div>
         <div className="selection-display-section">

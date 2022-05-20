@@ -6,7 +6,7 @@ function LetterTile(props) {
     // check conditional rendering if the props.letterDisplay is blank or not
     return (
       <>
-      <span>{props.letterDisplay != " " ? props.letterDisplay : "_"}</span>
+      <span className="letter">{props.letterDisplay != "" ? props.letterDisplay : " "}</span>
       </>
     );
   }
