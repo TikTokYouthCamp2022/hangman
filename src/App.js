@@ -31,8 +31,12 @@ function Home() {
         <p>You can do this, I believe in you.</p>
       </main>
       <nav>
-        <Link to="/about">About</Link>
-        <Link to="/game">Game</Link>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+          <Link to="/game">Game</Link>
+          </li>
       </nav>
     </>
   );
@@ -224,6 +228,7 @@ function Game() {
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
         <Popup trigger={gameOverPopup} setTrigger={setGameOverPopup}>
           <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
+          The word was {gameState.word}
         </Popup>
 
         <Popup trigger={winPopup} setTrigger={setWinPopup}>
