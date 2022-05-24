@@ -31,8 +31,12 @@ function Home() {
         <p>You can do this, I believe in you.</p>
       </main>
       <nav>
-        <Link to="/about">About</Link>
-        <Link to="/game">Game</Link>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+          <Link to="/game">Game</Link>
+          </li>
       </nav>
     </>
   );
