@@ -228,6 +228,7 @@ function Game() {
         <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
         <Popup trigger={gameOverPopup} setTrigger={setGameOverPopup}>
           <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
+          The word was {gameState.word}
         </Popup>
 
         <Popup trigger={winPopup} setTrigger={setWinPopup}>
