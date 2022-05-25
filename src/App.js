@@ -120,7 +120,7 @@ function Game() {
 
         if (updatedLives == 0) {
           setGameOverPopup(true);
-          gameState.gameStatus = "unsolved"
+          updatedGameStatus = "unsolved"
         }
     }
     else if (checkWinCondition(updatedSelectedLetters, gameState.lettersRequired)){
