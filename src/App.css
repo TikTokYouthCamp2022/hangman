@@ -1,15 +1,6 @@
 /* DEFAULT STYLING */
 .App {
   text-align: center;
-  background-image: url("./assets/images/linedPaperBg.jpg");
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
 }
 
 .App-logo {
