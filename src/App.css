@@ -173,7 +173,7 @@
   color: #f7a202;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 880px) {
   .game-container {
     display: block;
     /* flex-wrap: wrap ; */
