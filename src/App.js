@@ -233,11 +233,8 @@ function Game() {
           </div>
         </div>
         
-        
-
-        <hr/>
         <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
-        <button className='log-vars-btn' onClick={logVars}>Log Vars</button>
+        {/* <button className='log-vars-btn' onClick={logVars}>Log Vars</button> */}
         <Popup trigger={gameOverPopup} setTrigger={setGameOverPopup}>
           <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
           The word was {gameState.word}

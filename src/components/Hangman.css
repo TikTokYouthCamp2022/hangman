@@ -1,3 +1,6 @@
-.figure-container {
-    width: 330px;
+.sticky-note {
+    width: 300px;
+    padding: 60px 10px 10px 10px;
+    background-image: url("../assets/images/stickyNote.png");
+    background-size: 100% 100%;
 }
