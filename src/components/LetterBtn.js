@@ -15,7 +15,7 @@ function LetterBtn(props) {
     }
   
     return (
-      <button onClick={letterSelected}>{ props.letter }, {props.btnInactive}</button>
+      <button className="keys" onClick={letterSelected}>{ props.letter }</button>
     );
   }
   

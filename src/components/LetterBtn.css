@@ -1,3 +1,19 @@
 .p {
   font-family: 'Just Another Hand', cursive;
 }
+
+.keys {
+  background-color: #f6f7f7;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 18px 20px;
+  cursor: pointer;
+  margin: 0.25em;
+  text-align: center;
+  display: inline-block;
+  font-size: 23px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+  border-radius: 4px;
+  font-family: 'Just Another Hand', cursive;
+  font-weight: 1000;
+}
