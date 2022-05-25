@@ -1,4 +1,5 @@
 // The Hangman animation component
+import "./Hangman.css"
 
 function Hangman(props) {
     return (

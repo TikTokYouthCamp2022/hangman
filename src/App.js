@@ -190,38 +190,50 @@ function Game() {
           alt="Avatar"
           src="https://www.svgrepo.com/show/75578/avatar.svg"
         />
-        <div className='game-stats-section'>
-          <p className='hidden-word'>The hidden word is: {gameState.word}</p>
-          <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
-          <p className='game-status'>Game Status: {gameState.gameStatus}</p>
+        
+        <div className="game-container">
+          <div className='show-area'>
+            <div className="hangman-section">
+              <Hangman/>
+            </div>
+            
+            <div className='game-stats-section'>
+              <p className='hidden-word'>The hidden word is: {gameState.word}</p>
+              <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
+              <p className='game-status'>Game Status: {gameState.gameStatus}</p>
+            </div>
+          </div>
+          
+          <div className="play-area">
+            <div className="word-section">
+              <Word 
+                word={gameState.word} 
+                selectedLetters={gameState.selectedLetters}
+                letters={letters}
+                lettersRequired={gameState.lettersRequired}             
+              />
+            </div>
+
+            <div className="selection-display-section">
+              <SelectionDisplay
+                selectedLetters={gameState.selectedLetters}
+                lettersRequired={gameState.lettersRequired}
+                letters={letters}
+              />
+            </div>
+
+            <div className="keyboard-section">
+              <Keyboard 
+                letters={letters}
+                buttonClickCallback={letterSelectCallback} 
+                selectedLetters={gameState.selectedLetters}
+                gameStatus={gameState.gameStatus}
+              />
+            </div>
+          </div>
         </div>
         
-        <div className="hangman-section">
-          <Hangman/>
-        </div>
-        <div className="word-section">
-          <Word 
-            word={gameState.word} 
-            selectedLetters={gameState.selectedLetters}
-            letters={letters}
-            lettersRequired={gameState.lettersRequired}             
-          />
-        </div>
-        <div className="selection-display-section">
-          <SelectionDisplay
-            selectedLetters={gameState.selectedLetters}
-            lettersRequired={gameState.lettersRequired}
-            letters={letters}
-          />
-        </div>
-        <div className="keyboard-section">
-          <Keyboard 
-            letters={letters}
-            buttonClickCallback={letterSelectCallback} 
-            selectedLetters={gameState.selectedLetters}
-            gameStatus={gameState.gameStatus}
-          />
-        </div>
+        
 
         <hr/>
         <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>

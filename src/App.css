@@ -46,22 +46,28 @@
 .game-stats-section {
   border: 2px solid #6a5acd;
   background-color: #61dafb;
-  width: 60%;
-  transform: translate(30%, 0);
+  width: 90%;
+  margin: 10px;
+  /* transform: translate(30%, 0); */
 }
 
 .hangman-section {
   border: 2px solid #6a5acd;
   background-color: #61dafb;
-  width: 60%;
-  transform: translate(30%, 0);
+  width: 90%;
+  margin: 10px;
+
+  /* transform: translate(30%, 0); */
 }
 
 .word-section {
   border: 2px solid #6a5acd;
   background-color: #61dafb;
-  width: 60%;
-  transform: translate(30%, 0);
+  /* width: fit-content; */
+  width: 90%;
+  margin: 10px;
+  display: inline-block;
+  /* transform: translate(30%, 0); */
 }
 
 .letter {
@@ -83,15 +89,21 @@
 .selection-display-section {
   border: 2px solid #6a5acd;
   background-color: #61dafb;
-  width: 60%;
-  transform: translate(30%, 0);
+  width: 90%;
+  margin: 10px;
+  display: inline-block;
+
+  /* transform: translate(30%, 0); */
 }
 
 .keyboard-section {
   border: 2px solid #6a5acd;
   background-color: #61dafb;
-  width: 60%;
-  transform: translate(30%, 0);
+  width: 90%;
+  margin: 10px;
+  display: inline-block;
+
+  /* transform: translate(30%, 0); */
 }
 
 /* BUTTONS */
@@ -120,6 +132,24 @@
   transform: translateY(4px);
 }
 
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap ; */
+}
+
+.show-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* .play-area {
+  display: inline-grid;
+  grid-template-columns: 3fr 1fr;
+} */
+
 /* FONTAWESOME ICONs*/
 
 /* GAME OVER */
@@ -130,4 +160,11 @@
 /* WIN */
 .fa-trophy {
   color: #f7a202;
+}
+
+@media (max-width: 750px) {
+  .game-container {
+    display: block;
+    /* flex-wrap: wrap ; */
+  }
 }
