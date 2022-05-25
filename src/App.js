@@ -198,7 +198,7 @@ function Game() {
             </div>
             
             <div className='game-stats-section'>
-              <p className='hidden-word'>The hidden word is: {gameState.word}</p>
+              {/* <p className='hidden-word'>The hidden word is: {gameState.word}</p> */}
               <p className='lives-left'>Lives Left: {gameState.livesLeft}</p>
               <p className='game-status'>Game Status: {gameState.gameStatus}</p>
             </div>

@@ -137,6 +137,8 @@
   align-items: center;
   justify-content: center;
   /* flex-wrap: wrap ; */
+  font-family: 'Just Another Hand', cursive;
+  font-size: 25px;
 }
 
 .show-area{
@@ -150,6 +152,15 @@
   grid-template-columns: 3fr 1fr;
 } */
 
+.lives-left {
+  font-size: 30px;
+  font-family: 'Just Another Hand', cursive;
+}
+
+.game-status {
+  font-size: 30px;
+  font-family: 'Just Another Hand', cursive;
+}
 /* FONTAWESOME ICONs*/
 
 /* GAME OVER */

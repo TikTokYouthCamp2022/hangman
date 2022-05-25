@@ -1,5 +1,6 @@
 // The Letter Button component
 // One for each of the 26 letters in the alphabet
+import "./LetterBtn.css"
 
 function LetterBtn(props) {
     // User clicks this button to guess the letter.
