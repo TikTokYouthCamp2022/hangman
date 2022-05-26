@@ -4,11 +4,11 @@ function SelectionDisplay(props) {
 
     return (
       <>
-      <p>This is where we put the incorrectly selected letters</p>
+      <p>Incorrect Letters</p>
       <div>
         {props.selectedLetters.map((value, ind) => 
             value===1 && props.lettersRequired[ind]===0 ?
-            <span>{props.letters[ind]}</span> : ""
+            <span>{props.letters[ind]} </span> : ""
         )}
       </div>
       </>
