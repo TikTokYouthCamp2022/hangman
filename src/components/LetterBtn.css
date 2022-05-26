@@ -17,3 +17,11 @@
   font-family: 'Just Another Hand', cursive;
   font-weight: 1000;
 }
+
+button:disabled,
+button[disabled]{
+  background-color: #99a7b6;
+  color: #424c54;
+  box-shadow: none;
+  cursor: auto;
+}
