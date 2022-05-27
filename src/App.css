@@ -72,7 +72,9 @@
 
 .word-section {
   border: 2px solid #6a5acd;
-  background-color: #61dafb;
+  border-style: dashed;
+
+  /* background-color: #61dafb; */
   /* width: fit-content; */
   width: 90%;
   margin: 10px;
@@ -98,7 +100,9 @@
 
 .selection-display-section {
   border: 2px solid #6a5acd;
-  background-color: #61dafb;
+  border-style: dashed;
+
+  /* background-color: #61dafb; */
   width: 90%;
   margin: 10px;
   display: inline-block;
@@ -108,12 +112,34 @@
 
 .keyboard-section {
   border: 2px solid #6a5acd;
-  background-color: #61dafb;
+  border-style: dashed;
+
+  /* background-color: #61dafb; */
   width: 90%;
   margin: 10px;
   display: inline-block;
 
   /* transform: translate(30%, 0); */
+}
+
+.app-header {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 60px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.about-header {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 50px;
+  font-weight: normal;
+
+}
+
+.about-para {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 40px;
+  padding: 10px;
 }
 
 /* BUTTONS */

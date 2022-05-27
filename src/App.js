@@ -13,11 +13,11 @@ import Avatar from 'react-avatar';
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Hangman!</h1>
+      <h1 className='app-header'>Welcome to Hangman!</h1>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Game />} />
         <Route path="about" element={<About />} />
-        <Route path="game" element={<Game />} />
+        {/* <Route path="game" element={<Game />} /> */}
       </Routes>
     </div>
   );
@@ -35,7 +35,7 @@ function Home() {
             <Link to="/about">About</Link>
           </li>
           <li>
-          <Link to="/game">Game</Link>
+          <Link to="/">Game</Link>
           </li>
       </nav>
     </>
@@ -47,15 +47,12 @@ function About() {
   return (
     <>
       <main>
-        <h2>Who are we?</h2>
-        <p>
+        <h1 className='about-header'>Who are we?</h1>
+        <p className='about-para'>
           We are a team of developers from the Tik Tok Youth Camp 2022 that aims to 
-          build a <Link to="/game"> hangman game</Link> using web technology covered during the camp.
+          build a <Link to="/"> hangman game</Link> using web technology covered during the camp.
         </p>
       </main>
-      <nav>
-        <Link to="/">Return to Home</Link>
-      </nav>
     </>
   );
 }
@@ -182,10 +179,10 @@ function Game() {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" crossorigin="anonymous"></link>
       <main>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
       </nav>
         <hr/>
-        <h2>Welcome to the game!</h2>
+        {/* <h2>Welcome to the game!</h2> */}
         <Avatar className='avatar-section'
           alt="Avatar"
           src="https://www.svgrepo.com/show/75578/avatar.svg"
