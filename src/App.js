@@ -59,8 +59,7 @@ function About() {
 
 
 function Game() {
-  // temporary database of words to guess (to be upgraded later :D)
-  const words = ["SPAGHETTI", "LASAGNA", "RAVIOLI", "PEPPERONI PIZZA"] 
+  const words = ["SPAGHETTI", "LASAGNA", "RAVIOLI", "PEPPERONI PIZZA", "ABALONE", "NUTTY", "OILY", "SHRIMP", "MILK", "BREAD", "BUTTER", "CHEESE", "YOGHURT", "SANDWICH", "PANCAKE", "PIE", "HONEY", "WAFFLE", "DONUTS", "SALAD", "MEATBALL", "GRILLED CHICKEN", "BURGER", "TUNA", "NOODLES", "EGG", "BACON", "FRENCH FRIES", "BIRYANI", "SMOKED SALMON", "MAYONNAISE", "CHOCOLATE", "ICE CREAM", "SEAFOOD", "ASPARAGUS", "ALMOND", "AVACADO", "​​BLACK BEANS", "DUMPLINGS", "ENGLISH MUFFINS", "CHEESECAKE", "BANANA MUFFIN"] 
 
   const [gameState, setGameState] = useState({
     word: "",
