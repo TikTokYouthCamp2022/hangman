@@ -182,10 +182,7 @@ function Game() {
       </nav>
         <hr/>
         {/* <h2>Welcome to the game!</h2> */}
-        <Avatar className='avatar-section'
-          alt="Avatar"
-          src="https://www.svgrepo.com/show/75578/avatar.svg"
-        />
+        
         
         <div className="game-container">
           <div className='show-area'>
@@ -228,8 +225,10 @@ function Game() {
             </div>
           </div>
         </div>
-        
-        <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
+        <div className="button-section">
+          <button className='start-game-btn' onClick={startGame}><i class="fas fa-arrows-rotate"></i> New Game</button>
+
+        </div>
         {/* <button className='log-vars-btn' onClick={logVars}>Log Vars</button> */}
         <Popup trigger={gameOverPopup} setTrigger={setGameOverPopup}>
           <h1>Game Over <i class="fas fa-heart-crack fa-fade"></i></h1>
@@ -239,6 +238,12 @@ function Game() {
         <Popup trigger={winPopup} setTrigger={setWinPopup}>
           <h1>You Win! <i class="fa-solid fa-trophy fa-bounce fa-2x"></i></h1>
         </Popup>
+
+        <Avatar className='avatar-section'
+          alt="Avatar"
+          src="https://www.svgrepo.com/show/75578/avatar.svg"
+        />
+        <p className='username'>Username: Test User</p>
 
       </main>
       
